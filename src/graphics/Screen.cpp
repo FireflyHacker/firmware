@@ -158,7 +158,7 @@ static void drawIconScreen(const char *upperMsg, OLEDDisplay *display, OLEDDispl
 
     // draw centered icon left to right and centered above the one line of app text
     display->drawXbm(x + (SCREEN_WIDTH - icon_width) / 2, y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - icon_height) / 2 + 2,
-                     icon_width, icon_height, icon_bits);
+    icon_width, icon_height, icon_bits, 0);
 
     display->setFont(FONT_MEDIUM);
     display->setTextAlignment(TEXT_ALIGN_LEFT);
@@ -961,63 +961,63 @@ static void drawTextMessageFrame(OLEDDisplay *display, OLEDDisplayUiState *state
     if (strcmp(msg, "\U0001F44D") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - thumbs_width) / 2,
                          y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - thumbs_height) / 2 + 2 + 5, thumbs_width, thumbs_height,
-                         thumbup);
+                         thumbup, 0);
     } else if (strcmp(msg, "\U0001F44E") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - thumbs_width) / 2,
                          y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - thumbs_height) / 2 + 2 + 5, thumbs_width, thumbs_height,
-                         thumbdown);
+                         thumbdown, 0);
     } else if (strcmp(msg, "\U0001F60A") == 0 || strcmp(msg, "\U0001F600") == 0 || strcmp(msg, "\U0001F642") == 0 ||
                strcmp(msg, "\U0001F609") == 0 ||
                strcmp(msg, "\U0001F601") == 0) { // matches 5 different common smileys, so that the phone user doesn't have to
                                                  // remember which one is compatible
         display->drawXbm(x + (SCREEN_WIDTH - smiley_width) / 2,
                          y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - smiley_height) / 2 + 2 + 5, smiley_width, smiley_height,
-                         smiley);
+                         smiley, 0);
     } else if (strcmp(msg, "❓") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - question_width) / 2,
                          y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - question_height) / 2 + 2 + 5, question_width, question_height,
-                         question);
+                         question, 0);
     } else if (strcmp(msg, "‼️") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - bang_width) / 2, y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - bang_height) / 2 + 2 + 5,
-                         bang_width, bang_height, bang);
+                         bang_width, bang_height, bang, 0);
     } else if (strcmp(msg, "\U0001F4A9") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - poo_width) / 2, y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - poo_height) / 2 + 2 + 5,
-                         poo_width, poo_height, poo);
+                         poo_width, poo_height, poo, 0);
     } else if (strcmp(msg, "\U0001F923") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - haha_width) / 2, y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - haha_height) / 2 + 2 + 5,
-                         haha_width, haha_height, haha);
+                         haha_width, haha_height, haha, 0);
     } else if (strcmp(msg, "\U0001F44B") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - wave_icon_width) / 2,
                          y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - wave_icon_height) / 2 + 2 + 5, wave_icon_width,
-                         wave_icon_height, wave_icon);
+                         wave_icon_height, wave_icon, 0);
     } else if (strcmp(msg, "\U0001F920") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - cowboy_width) / 2,
                          y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - cowboy_height) / 2 + 2 + 5, cowboy_width, cowboy_height,
-                         cowboy);
+                         cowboy, 0);
     } else if (strcmp(msg, "\U0001F42D") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - deadmau5_width) / 2,
                          y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - deadmau5_height) / 2 + 2 + 5, deadmau5_width, deadmau5_height,
-                         deadmau5);
+                         deadmau5, 0);
     } else if (strcmp(msg, "\xE2\x98\x80\xEF\xB8\x8F") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - sun_width) / 2, y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - sun_height) / 2 + 2 + 5,
-                         sun_width, sun_height, sun);
+                         sun_width, sun_height, sun, 0);
     } else if (strcmp(msg, "\u2614") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - rain_width) / 2, y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - rain_height) / 2 + 2 + 10,
-                         rain_width, rain_height, rain);
+                         rain_width, rain_height, rain, 0);
     } else if (strcmp(msg, "☁️") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - cloud_width) / 2,
-                         y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - cloud_height) / 2 + 2 + 5, cloud_width, cloud_height, cloud);
+                         y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - cloud_height) / 2 + 2 + 5, cloud_width, cloud_height, cloud, 0);
     } else if (strcmp(msg, "🌫️") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - fog_width) / 2, y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - fog_height) / 2 + 2 + 5,
-                         fog_width, fog_height, fog);
+                         fog_width, fog_height, fog, 0);
     } else if (strcmp(msg, "\U0001F608") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - devil_width) / 2,
-                         y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - devil_height) / 2 + 2 + 5, devil_width, devil_height, devil);
+                         y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - devil_height) / 2 + 2 + 5, devil_width, devil_height, devil, 0);
     } else if (strcmp(msg, "♥️") == 0 || strcmp(msg, "\U0001F9E1") == 0 || strcmp(msg, "\U00002763") == 0 ||
                strcmp(msg, "\U00002764") == 0 || strcmp(msg, "\U0001F495") == 0 || strcmp(msg, "\U0001F496") == 0 ||
                strcmp(msg, "\U0001F497") == 0 || strcmp(msg, "\U0001F498") == 0) {
         display->drawXbm(x + (SCREEN_WIDTH - heart_width) / 2,
-                         y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - heart_height) / 2 + 2 + 5, heart_width, heart_height, heart);
+                         y + (SCREEN_HEIGHT - FONT_HEIGHT_MEDIUM - heart_height) / 2 + 2 + 5, heart_width, heart_height, heart, 0);
     } else {
         snprintf(tempBuf, sizeof(tempBuf), "%s", mp.decoded.payload.bytes);
         display->drawStringMaxWidth(0 + x, 0 + y + FONT_HEIGHT_SMALL, x + display->getWidth(), tempBuf);
@@ -1248,30 +1248,27 @@ static int8_t prevFrame = -1;
 // Draw the arrow pointing to a node's location
 void Screen::drawNodeHeading(OLEDDisplay *display, int16_t compassX, int16_t compassY, uint16_t compassDiam, float headingRadian)
 {
-    Point tip(0.0f, 0.5f), tail(0.0f, -0.35f); // pointing up initially
-    float arrowOffsetX = 0.14f, arrowOffsetY = 1.0f;
-    Point leftArrow(tip.x - arrowOffsetX, tip.y - arrowOffsetY), rightArrow(tip.x + arrowOffsetX, tip.y - arrowOffsetY);
+// Example: Suppose your XBM icon is 96 wide x 33 high
+static const int16_t iconWidth  = compass_width;
+static const int16_t iconHeight = compass_height;
 
-    Point *arrowPoints[] = {&tip, &tail, &leftArrow, &rightArrow};
+// Position so that the center of the icon is at (compassX, compassY).
+// That means top-left corner is half the width/height offset.
+int16_t xPos = compassX - iconWidth  / 2;
+int16_t yPos = compassY - iconHeight / 2;
 
-    for (int i = 0; i < 4; i++) {
-        arrowPoints[i]->rotate(headingRadian);
-        arrowPoints[i]->scale(compassDiam * 0.6);
-        arrowPoints[i]->translate(compassX, compassY);
-    }
-    /* Old arrow
-    display->drawLine(tip.x, tip.y, tail.x, tail.y);
-    display->drawLine(leftArrow.x, leftArrow.y, tip.x, tip.y);
-    display->drawLine(rightArrow.x, rightArrow.y, tip.x, tip.y);
-    display->drawLine(leftArrow.x, leftArrow.y, tail.x, tail.y);
-    display->drawLine(rightArrow.x, rightArrow.y, tail.x, tail.y);
-    */
-#ifdef USE_EINK
-    display->drawTriangle(tip.x, tip.y, rightArrow.x, rightArrow.y, tail.x, tail.y);
-#else
-    display->fillTriangle(tip.x, tip.y, rightArrow.x, rightArrow.y, tail.x, tail.y);
-#endif
-    display->drawTriangle(tip.x, tip.y, leftArrow.x, leftArrow.y, tail.x, tail.y);
+// Now just call the rotated draw function, passing in the heading in radians.
+// For example, if your drawXbmRotated is something like:
+//   drawXbmRotated(x, y, width, height, xbmPtr, angleRadians);
+// you’d do:
+display->drawXbm(
+    xPos,
+    yPos,
+    iconWidth,
+    iconHeight,
+    compass_bits,       // your XBM data pointer
+    headingRadian    // angle in radians
+);
 }
 
 // Get a string representation of the time passed since something happened
